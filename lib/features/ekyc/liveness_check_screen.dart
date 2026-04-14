@@ -127,8 +127,8 @@ class _LivenessCheckScreenState extends State<LivenessCheckScreen> with SingleTi
                     backgroundColor: AppColors.background,
                     valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
                   ),
-                  SizedBox(height: 12),
-                  Text(
+                  const SizedBox(height: 12),
+                  const Text(
                     'Verifikasi Sedang Berjalan...',
                     style: TextStyle(color: AppColors.brandGray, fontSize: 13, fontWeight: FontWeight.w600),
                   ),

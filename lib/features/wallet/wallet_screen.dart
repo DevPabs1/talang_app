@@ -51,7 +51,7 @@ class WalletScreen extends ConsumerWidget {
                         const Row(
                           children: [
                             _IconBadge(icon: Icons.notifications_none),
-                            SizedBox(width: 12),
+                            const SizedBox(width: 12),
                             CircleAvatar(
                               radius: 22,
                               backgroundImage: NetworkImage('https://i.pravatar.cc/150?u=budi'),
