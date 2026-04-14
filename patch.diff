@@ -1,0 +1,34 @@
+--- lib/features/ekyc/liveness_check_screen.dart
++++ lib/features/ekyc/liveness_check_screen.dart
+@@ -291,30 +291,6 @@
+                 const SizedBox(height: 32),
+               ],
+             ),
+-<<<<<<< Updated upstream
+-
+-            const Spacer(),
+-
+-            const Padding(
+-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+-              child: Column(
+-                children: [
+-                  LinearProgressIndicator(
+-                    value: 0.6,
+-                    backgroundColor: AppColors.background,
+-                    valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+-                  ),
+-                  const SizedBox(height: 12),
+-                  const Text(
+-                    'Verifikasi Sedang Berjalan...',
+-                    style: TextStyle(color: AppColors.brandGray, fontSize: 13, fontWeight: FontWeight.w600),
+-                  ),
+-                ],
+-              ),
+-            ),
+-          ],
+-=======
+           ),
+->>>>>>> Stashed changes
+         ),
+       ),
+     );
