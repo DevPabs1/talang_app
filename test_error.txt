@@ -1,0 +1,39 @@
+00:00 +0: loading /Users/mac/Documents/TalangApps/talang_app/test/smoke_test.dart                                                                                                                      00:01 +0: loading /Users/mac/Documents/TalangApps/talang_app/test/smoke_test.dart                                                                                                                      00:02 +0: loading /Users/mac/Documents/TalangApps/talang_app/test/smoke_test.dart                                                                                                                      00:03 +0: loading /Users/mac/Documents/TalangApps/talang_app/test/smoke_test.dart                                                                                                                      00:03 +0: Smoke Test: EkycScreen renders correctly                                                                                                                                                     00:03 +0: Smoke Test: EkycScreen renders correctly                                                                                                                                                     
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 124 pixels on the bottom.
+
+The relevant error-causing widget was:
+  Column
+  Column:file:///Users/mac/Documents/TalangApps/talang_app/lib/features/ekyc/ekyc_screen.dart:36:18
+
+The overflowing RenderFlex has an orientation of Axis.vertical.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be
+seen. If the content is legitimately bigger than the available space, consider clipping it with a
+ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+like a ListView.
+The specific RenderFlex in question is: RenderFlex#615b3 relayoutBoundary=up3 OVERFLOWING:
+  creator: Column ← Padding ← MediaQuery ← Padding ← SafeArea ← KeyedSubtree-[GlobalKey#c6189] ←
+    _BodyBuilder ← MediaQuery ← LayoutId-[<_ScaffoldSlot.body>] ← CustomMultiChildLayout ←
+    _ActionsScope ← Actions ← ⋯
+  parentData: offset=Offset(24.0, 24.0) (can use size)
+  constraints: BoxConstraints(0.0<=w<=752.0, 0.0<=h<=496.0)
+  size: Size(752.0, 496.0)
+  direction: vertical
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: stretch
+  verticalDirection: down
+◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:03 +0 -1: Smoke Test: EkycScreen renders correctly [E]                                                                                                                                              
+  Test failed. See exception logs above.
+  The test description was: Smoke Test: EkycScreen renders correctly
+  
+
+To run this test again: /Users/mac/development/flutter/bin/cache/dart-sdk/bin/dart test /Users/mac/Documents/TalangApps/talang_app/test/smoke_test.dart -p vm --plain-name 'Smoke Test: EkycScreen renders correctly'
+00:03 +0 -1: Some tests failed.                                                                                                                                                                        
