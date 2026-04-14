@@ -19,6 +19,9 @@ class _ScanReceiptScreenState extends State<ScanReceiptScreen> with SingleTicker
   final TextRecognizer _textRecognizer = TextRecognizer(script: TextRecognitionScript.latin);
   bool _isProcessing = false;
 
+  static final _priceRegex = RegExp(r'(\d+[\d.,]*)$');
+  static final _cleanPriceRegex = RegExp(r'[,.]');
+
   @override
   void initState() {
     super.initState();
@@ -51,10 +54,10 @@ class _ScanReceiptScreenState extends State<ScanReceiptScreen> with SingleTicker
         for (TextLine line in block.lines) {
           final text = line.text;
           // Look for price-like patterns (numbers at the end)
-          final priceMatch = RegExp(r'(\d+[\d.,]*)$').firstMatch(text.replaceAll(' ', ''));
+          final priceMatch = _priceRegex.firstMatch(text.replaceAll(' ', ''));
           
           if (priceMatch != null) {
-            final priceStr = priceMatch.group(0)!.replaceAll(RegExp(r'[,.]'), '');
+            final priceStr = priceMatch.group(0)!.replaceAll(_cleanPriceRegex, '');
             final price = double.tryParse(priceStr) ?? 0;
             
             if (price > 1000) { // Filter noise
