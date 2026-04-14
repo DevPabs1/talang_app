@@ -39,7 +39,7 @@ class _AssignItemsScreenState extends State<AssignItemsScreen> {
             child: const Row(
               children: [
                 Icon(Icons.auto_awesome, color: AppColors.success, size: 20),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     'AI Scan Berhasil: 4 item ditemukan',
