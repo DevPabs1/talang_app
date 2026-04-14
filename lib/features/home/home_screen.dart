@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.primary.withOpacity(0.3),
+                        color: AppColors.primary.withValues(alpha: 0.3),
                         blurRadius: 15,
                         offset: const Offset(0, 8),
                       ),
@@ -101,7 +101,7 @@ class _NavIcon extends StatelessWidget {
     return IconButton(
       icon: Icon(
         icon,
-        color: isSelected ? AppColors.primary : AppColors.brandGray.withOpacity(0.5),
+        color: isSelected ? AppColors.primary : AppColors.brandGray.withValues(alpha: 0.5),
         size: 26,
       ),
       onPressed: onTap,

@@ -35,7 +35,7 @@ class _AssignItemsScreenState extends State<AssignItemsScreen> {
           // AI Scan Success Banner
           Container(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-            color: AppColors.success.withOpacity(0.1),
+            color: AppColors.success.withValues(alpha: 0.1),
             child: const Row(
               children: [
                 Icon(Icons.auto_awesome, color: AppColors.success, size: 20),
@@ -64,14 +64,14 @@ class _AssignItemsScreenState extends State<AssignItemsScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
-                    border: isUnassigned ? Border.all(color: AppColors.error.withOpacity(0.3)) : null,
+                    border: isUnassigned ? Border.all(color: AppColors.error.withValues(alpha: 0.3)) : null,
                   ),
                   child: Row(
                     children: [
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withOpacity(0.1),
+                          color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Icon(

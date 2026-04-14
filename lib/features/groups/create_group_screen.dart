@@ -73,7 +73,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                     borderRadius: BorderRadius.circular(24),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: isSelected ? AppColors.primary.withOpacity(0.1) : AppColors.background,
+                        color: isSelected ? AppColors.primary.withValues(alpha: 0.1) : AppColors.background,
                         borderRadius: BorderRadius.circular(24),
                         border: Border.all(
                           color: isSelected ? AppColors.primary : Colors.transparent,

@@ -12,9 +12,7 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.primaryLight,
         surface: AppColors.surface,
-        background: AppColors.background,
         error: AppColors.error,
-        onBackground: AppColors.textPrimary,
         onSurface: AppColors.textPrimary,
       ),
       fontFamily: GoogleFonts.plusJakartaSans().fontFamily,
@@ -96,7 +94,7 @@ class AppTheme {
         labelStyle: const TextStyle(color: AppColors.brandGray),
         prefixIconColor: AppColors.brandGray,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 0,
         color: Colors.white,
         shape: RoundedRectangleBorder(

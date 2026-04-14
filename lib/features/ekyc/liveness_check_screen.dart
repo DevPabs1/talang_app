@@ -25,6 +25,7 @@ class _LivenessCheckScreenState extends State<LivenessCheckScreen> with SingleTi
     await Future.delayed(const Duration(milliseconds: 500));
     if (mounted) _progressController.forward();
     
+    // Simulate finding a face after 2 seconds
     await Future.delayed(const Duration(seconds: 4));
     if (mounted) {
        Navigator.pushReplacementNamed(context, '/privacy');
@@ -40,102 +41,257 @@ class _LivenessCheckScreenState extends State<LivenessCheckScreen> with SingleTi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: AppColors.deepZinc),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          'Talang',
+          style: TextStyle(
+            color: AppColors.primaryDark,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: false,
+        actions: [
+          const Padding(
+            padding: EdgeInsets.only(right: 8.0),
+            child: CircleAvatar(
+              radius: 16,
+              backgroundColor: AppColors.primaryDark,
+              child: Icon(Icons.person, color: Colors.white, size: 20),
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.notifications, color: AppColors.primaryDark),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.close, color: AppColors.deepZinc),
-                  ),
-                  const Spacer(),
-                  const Text(
-                    'Liveness Check',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                  const Spacer(),
-                  const SizedBox(width: 48),
-                ],
-              ),
-            ),
-            const SizedBox(height: 40),
-            const Text(
-              'Posisikan Wajah Kamu',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.deepZinc),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Kedipkan mata kamu atau tengok ke samping.',
-              style: TextStyle(color: AppColors.brandGray),
-            ),
-            
-            const Spacer(),
-            
-            // Face Circle
-            Stack(
-              alignment: Alignment.center,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Animated Progress Ring
-                SizedBox(
-                  width: 280,
-                  height: 280,
-                  child: AnimatedBuilder(
-                    animation: _progressController,
-                    builder: (context, child) {
-                      return CircularProgressIndicator(
-                        value: _progressController.value,
-                        strokeWidth: 8,
-                        backgroundColor: AppColors.background,
-                        valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primary),
-                      );
-                    },
+                const SizedBox(height: 32),
+                Text(
+                  'Identity Verification',
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    fontSize: 28,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  "Position your face in the circle and smile\nto confirm it's you.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: AppColors.brandGray,
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
+                ),
+
+                const SizedBox(height: 48),
+
+                // Camera View
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Outer border ring
+                    Container(
+                      width: 280,
+                      height: 280,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color(0xFFE2E8F0),
+                          width: 8,
+                        ),
+                      ),
+                    ),
+
+                    // Progress arc (Simulated)
+                    SizedBox(
+                      width: 280,
+                      height: 280,
+                      child: AnimatedBuilder(
+                        animation: _progressController,
+                        builder: (context, child) {
+                          return CircularProgressIndicator(
+                            value: _progressController.value * 0.75, // Stop at 75% for matching design
+                            strokeWidth: 8,
+                            backgroundColor: Colors.transparent,
+                            valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primaryDark),
+                          );
+                        },
+                      ),
+                    ),
+
+                    // The camera feed simulation
+                    Container(
+                      width: 250,
+                      height: 250,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xFF111827), // Very dark color
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          // Inner dashed ring
+                          Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: AppColors.primaryDark.withValues(alpha: 0.5),
+                                width: 1,
+                                style: BorderStyle.solid, // Flutter doesn't have native dashed border easily without extra package
+                              ),
+                            ),
+                          ),
+                          // Camera lens icon representing feed
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.black,
+                              border: Border.all(color: Colors.white24, width: 2),
+                            ),
+                            child: const Icon(Icons.camera, color: Colors.white54, size: 30),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Success checkmark badge
+                    Positioned(
+                      bottom: 8,
+                      right: 16,
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryDark,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(Icons.check, color: Colors.white, size: 24),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 48),
+
+                // Status Card
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(32),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryLight,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(Icons.face, color: AppColors.primaryDark),
+                      ),
+                      const SizedBox(width: 16),
+                      const Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Face Detected',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              'Stay still for 2 more seconds...',
+                              style: TextStyle(
+                                color: AppColors.brandGray,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Text(
+                        '75%',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primaryDark,
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                    ],
                   ),
                 ),
                 
-                // Mask with Circle Cutout
+                const SizedBox(height: 24),
+
+                // Encryption badge
                 Container(
-                  width: 260,
-                  height: 260,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.background,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF1F5F9), // slate-100
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  child: ClipOval(
-                    child: Container(
-                      color: Colors.grey[900],
-                      child: const Center(
-                        child: Icon(Icons.face_retouching_natural, size: 100, color: Colors.white12),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.lock, size: 14, color: AppColors.brandGray),
+                      SizedBox(width: 8),
+                      Text(
+                        'END-TO-END ENCRYPTED VERIFICATION',
+                        style: TextStyle(
+                          color: AppColors.brandGray,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.5,
+                        ),
                       ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 32),
+
+                // Action Button
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/privacy');
+                  },
+                  icon: const Icon(Icons.shield, color: Colors.white),
+                  label: const Text('Verify Identity', style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primaryDark,
+                    minimumSize: const Size(double.infinity, 56),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28),
                     ),
                   ),
                 ),
+                const SizedBox(height: 32),
               ],
             ),
-            
-            const Spacer(),
-            
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: Column(
-                children: [
-                  LinearProgressIndicator(
-                    value: 0.6,
-                    backgroundColor: AppColors.background,
-                    valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
-                  ),
-                  SizedBox(height: 12),
-                  Text(
-                    'Verifikasi Sedang Berjalan...',
-                    style: TextStyle(color: AppColors.brandGray, fontSize: 13, fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

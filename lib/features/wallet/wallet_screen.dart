@@ -75,16 +75,16 @@ class WalletScreen extends ConsumerWidget {
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: AppColors.accent.withOpacity(0.08),
+                  color: AppColors.accent.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(32),
-                  border: Border.all(color: AppColors.accent.withOpacity(0.15)),
+                  border: Border.all(color: AppColors.accent.withValues(alpha: 0.15)),
                 ),
                 child: Row(
                   children: [
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: AppColors.accent.withOpacity(0.1),
+                        color: AppColors.accent.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(Icons.receipt_long_rounded, color: AppColors.accent),
@@ -202,7 +202,7 @@ class WalletScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(32), // Deep Sync: 32px
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.02),
+                                color: Colors.black.withValues(alpha: 0.02),
                                 blurRadius: 10,
                                 offset: const Offset(0, 4),
                               ),
@@ -297,7 +297,7 @@ class _IconBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.15),
+        color: Colors.white.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Icon(icon, color: Colors.white, size: 24),
@@ -315,7 +315,7 @@ class _CategoryChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
-        color: (active ? AppColors.success : AppColors.accent).withOpacity(0.1),
+        color: (active ? AppColors.success : AppColors.accent).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Text(
@@ -355,7 +355,7 @@ class _QuickActionItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.04),
+                  color: Colors.black.withValues(alpha: 0.04),
                   blurRadius: 15,
                   offset: const Offset(0, 6),
                 ),

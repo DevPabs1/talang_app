@@ -64,7 +64,7 @@ class _PrivacyConsentScreenState extends State<PrivacyConsentScreen> {
               const SizedBox(height: 48), // Replaced Spacer
               Text(
                 'Dengan melanjutkan, Anda menyetujui Syarat & Ketentuan serta Kebijakan Privasi Talang.',
-                style: TextStyle(fontSize: 11, color: AppColors.brandGray.withOpacity(0.8)),
+                style: TextStyle(fontSize: 11, color: AppColors.brandGray.withValues(alpha: 0.8)),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
@@ -114,7 +114,7 @@ class _VisibilityOption extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primary.withOpacity(0.04) : Colors.white,
+          color: isSelected ? AppColors.primary.withValues(alpha: 0.04) : Colors.white,
           borderRadius: BorderRadius.circular(32),
           border: Border.all(
             color: isSelected ? AppColors.primary : AppColors.border,

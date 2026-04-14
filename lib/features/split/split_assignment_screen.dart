@@ -81,7 +81,7 @@ class _SplitAssignmentScreenState extends State<SplitAssignmentScreen> {
                                 selected: isSelected,
                                 onSelected: (_) => _toggleFriend(index, friend.id),
                                 backgroundColor: AppColors.zinc100,
-                                selectedColor: AppColors.primary.withOpacity(0.2),
+                                selectedColor: AppColors.primary.withValues(alpha: 0.2),
                                 checkmarkColor: AppColors.primary,
                                 labelStyle: TextStyle(
                                   color: isSelected ? AppColors.primary : AppColors.zinc600,

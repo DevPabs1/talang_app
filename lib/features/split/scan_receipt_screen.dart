@@ -132,7 +132,7 @@ class _ScanReceiptScreenState extends State<ScanReceiptScreen> with SingleTicker
                       color: AppColors.primary,
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.primary.withOpacity(0.8),
+                          color: AppColors.primary.withValues(alpha: 0.8),
                           blurRadius: 10,
                           spreadRadius: 2,
                         ),
