@@ -2,30 +2,30 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Brand Colors (Synced from Stitch Deep Analysis)
-  static const Color primary = Color(0xFF25C2C2); // Talang Teal
+  static const Color primary = Color(0xFF006666); // Talang Teal
   static const Color primaryLight = Color(0xFF0DEAFC); // Bright Cyan
   static const Color accent = Color(0xFF0095E2); // Deep Blue Accent
   static const Color primaryDark = Color(0xFF134E4A); // Teal 900 for dark contrast
 
   // Premium Deep Zinc Palette (No Pure Black)
-  static const Color deepZinc = Color(0xFF0F172A); // Zinc 900 for headings & secondary buttons
-  static const Color brandGray = Color(0xFF64748B); // Slate 500 for secondary text
+  static const Color deepZinc = Color(0xFF2C2F30); // Zinc 900 for headings & secondary buttons
+  static const Color brandGray = Color(0xFF595C5D); // Slate 500 for secondary text
   
   // UI Palette
-  static const Color background = Color(0xFFF8F9FA); // Off-White
+  static const Color background = Color(0xFFF5F6F7); // Off-White
   static const Color surface = Colors.white; 
-  static const Color border = Color(0xFFE2E8F0); // Slate 200
+  static const Color border = Color(0xFFABADAE); // Slate 200
 
   // Nebula Card Gradients (Using Stitch Colors)
   static const List<Color> nebulaGradient = [
-    Color(0xFF25C2C2),
+    Color(0xFF006666),
     Color(0xFF0DEAFC),
     Color(0xFF0095E2),
   ];
 
   // Text Colors
-  static const Color textPrimary = Color(0xFF0F172A); // Deep Zinc
-  static const Color textSecondary = Color(0xFF64748B); // Brand Gray
+  static const Color textPrimary = Color(0xFF2C2F30); // Deep Zinc
+  static const Color textSecondary = Color(0xFF595C5D); // Brand Gray
   
   // Status Colors
   static const Color success = Color(0xFF10B981);
