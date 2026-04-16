@@ -57,7 +57,7 @@ class _NebulaCardState extends State<NebulaCard> with SingleTickerProviderStateM
             ),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primary.withOpacity(0.3),
+                color: AppColors.primary.withValues(alpha: 0.3),
                 blurRadius: 32,
                 offset: const Offset(0, 12),
               ),
@@ -74,7 +74,7 @@ class _NebulaCardState extends State<NebulaCard> with SingleTickerProviderStateM
                   height: 150,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                   ),
                 ),
               ),
@@ -86,7 +86,7 @@ class _NebulaCardState extends State<NebulaCard> with SingleTickerProviderStateM
                   height: 180,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.indigo.withOpacity(0.2),
+                    color: Colors.indigo.withValues(alpha: 0.2),
                   ),
                 ),
               ),
@@ -100,9 +100,9 @@ class _NebulaCardState extends State<NebulaCard> with SingleTickerProviderStateM
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Colors.white.withOpacity(0),
-                        Colors.white.withOpacity(0.05),
-                        Colors.white.withOpacity(0),
+                        Colors.white.withValues(alpha: 0),
+                        Colors.white.withValues(alpha: 0.05),
+                        Colors.white.withValues(alpha: 0),
                       ],
                       stops: [
                         _controller.value - 0.2,

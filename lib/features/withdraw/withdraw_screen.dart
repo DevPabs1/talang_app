@@ -54,7 +54,7 @@ class _WithdrawScreenState extends ConsumerState<WithdrawScreen> {
                   labelText: 'Pilih Bank Tujuan',
                   prefixIcon: Icon(Icons.account_balance_outlined),
                 ),
-                value: _selectedBank,
+                initialValue: _selectedBank,
                 items: _banks.map((bank) {
                   return DropdownMenuItem(
                     value: bank['name'],

@@ -34,7 +34,7 @@ class GroupsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.3),
+                    color: AppColors.primary.withValues(alpha: 0.3),
                     blurRadius: 30,
                     offset: const Offset(0, 15),
                   ),
@@ -57,7 +57,7 @@ class GroupsScreen extends StatelessWidget {
                           value: 0.77,
                           strokeWidth: 14,
                           strokeCap: StrokeCap.round,
-                          backgroundColor: Colors.white.withOpacity(0.1),
+                          backgroundColor: Colors.white.withValues(alpha: 0.1),
                           valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
                         ),
                       ),
@@ -103,9 +103,9 @@ class GroupsScreen extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppColors.success.withOpacity(0.1),
+                  color: AppColors.success.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(24),
-                  border: Border.all(color: AppColors.success.withOpacity(0.2)),
+                  border: Border.all(color: AppColors.success.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   children: [
@@ -183,7 +183,7 @@ class _BalanceAction extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: Colors.white, size: 24),
@@ -225,7 +225,7 @@ class _GroupListItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(32),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.02),
+              color: Colors.black.withValues(alpha: 0.02),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -237,7 +237,7 @@ class _GroupListItem extends StatelessWidget {
               width: 56,
               height: 56,
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: AppColors.primary.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(Icons.folder_shared_rounded, color: AppColors.primary),
@@ -253,7 +253,7 @@ class _GroupListItem extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: statusColor.withOpacity(0.1),
+                      color: statusColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(

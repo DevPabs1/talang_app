@@ -33,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
                    ),
                    Text(
                      '@budi.santoso',
-                     style: TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 14),
+                     style: TextStyle(color: Colors.white.withValues(alpha: 0.8), fontSize: 14),
                    ),
                 ],
               ),
@@ -126,7 +126,7 @@ class _ProfileMenuTile extends StatelessWidget {
       leading: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: isDanger ? AppColors.error.withOpacity(0.1) : AppColors.zinc100,
+          color: isDanger ? AppColors.error.withValues(alpha: 0.1) : AppColors.zinc100,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Icon(icon, color: isDanger ? AppColors.error : AppColors.zinc600, size: 20),

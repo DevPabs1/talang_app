@@ -42,7 +42,7 @@ void main() {
     await tester.tap(loginButton);
     await tester.pumpAndSettle();
 
-    // Verify we navigated to the next screen (EkycScreen usually contains 'Verify Your Identity')
+    // Verify we navigated to the next screen (EkycScreen usually contains 'Verifikasi Identitas')
     expect(find.byType(LoginScreen), findsNothing);
     expect(find.text('Verifikasi Identitas'), findsOneWidget);
   });

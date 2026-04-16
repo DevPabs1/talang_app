@@ -84,7 +84,7 @@ class _ReceiptItemsScreenState extends State<ReceiptItemsScreen> {
           // Calculation Banner
           Container(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-            color: isAllAssigned ? AppColors.success.withOpacity(0.1) : AppColors.primary.withOpacity(0.05),
+            color: isAllAssigned ? AppColors.success.withValues(alpha: 0.1) : AppColors.primary.withValues(alpha: 0.05),
             child: Row(
               children: [
                 Icon(
@@ -132,11 +132,11 @@ class _ReceiptItemsScreenState extends State<ReceiptItemsScreen> {
                           border: Border.all(
                             color: isHighlighted 
                               ? AppColors.primary 
-                              : (isAssigned ? AppColors.border : AppColors.error.withOpacity(0.3)),
+                              : (isAssigned ? AppColors.border : AppColors.error.withValues(alpha: 0.3)),
                             width: isHighlighted ? 2 : 1,
                           ),
                           boxShadow: isHighlighted ? [
-                            BoxShadow(color: AppColors.primary.withOpacity(0.1), blurRadius: 10)
+                            BoxShadow(color: AppColors.primary.withValues(alpha: 0.1), blurRadius: 10)
                           ] : [],
                         ),
                         child: Row(
@@ -259,7 +259,7 @@ class _ReceiptItemsScreenState extends State<ReceiptItemsScreen> {
                       color: Colors.transparent,
                       child: CircleAvatar(
                         radius: 35,
-                        backgroundColor: AppColors.primary.withOpacity(0.5),
+                        backgroundColor: AppColors.primary.withValues(alpha: 0.5),
                         child: CircleAvatar(
                           radius: 30,
                           backgroundImage: NetworkImage(member['avatar']),

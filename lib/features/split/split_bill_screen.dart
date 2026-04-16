@@ -86,10 +86,10 @@ class _SplitBillScreenState extends State<SplitBillScreen> with SingleTickerProv
                     end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(32),
-                  border: Border.all(color: AppColors.primary.withOpacity(0.3), width: 2),
+                  border: Border.all(color: AppColors.primary.withValues(alpha: 0.3), width: 2),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.primary.withOpacity(0.05),
+                      color: AppColors.primary.withValues(alpha: 0.05),
                       blurRadius: 20,
                       offset: const Offset(0, 10),
                     ),
@@ -101,7 +101,7 @@ class _SplitBillScreenState extends State<SplitBillScreen> with SingleTickerProv
                     Container(
                       padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(Icons.psychology, size: 64, color: AppColors.primary),

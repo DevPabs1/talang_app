@@ -29,7 +29,7 @@ class _KtpScanScreenState extends State<KtpScanScreen> {
           // Search-style Overlay
           ColorFiltered(
             colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.6),
+              Colors.black.withValues(alpha: 0.6),
               BlendMode.srcOut,
             ),
             child: Stack(
