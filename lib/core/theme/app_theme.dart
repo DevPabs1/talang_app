@@ -96,11 +96,11 @@ class AppTheme {
         labelStyle: const TextStyle(color: AppColors.brandGray),
         prefixIconColor: AppColors.brandGray,
       ),
-      cardTheme: CardTheme(
+      cardTheme: const CardThemeData(
         elevation: 0,
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32), // Deep Sync: Standard 32px
+          borderRadius: BorderRadius.all(Radius.circular(32)), // Deep Sync: Standard 32px
         ),
       ),
     );
